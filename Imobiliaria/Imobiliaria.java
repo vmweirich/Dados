@@ -1,9 +1,7 @@
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.Scanner;
 
 public class Imobiliaria {
-    private static final Imovel[] Imobiliaria = null;
     ArrayList<Imovel> imovel = new ArrayList<>();
     Scanner ler = new Scanner(System.in);
 
@@ -23,38 +21,38 @@ public class Imobiliaria {
             opcao = ler.nextInt();
 
             switch (opcao) {
-                case 1:
-                    Cadastrar();
-                    break;
-                case 2:
-                    Listar();
-                    break;
-                case 3:
-                    ListaFiltrada();
-                    break;
-                case 4:
-                    Editar();
-                    break;
-                case 5:
-                    Excluir();
-                    break;
-                case 6:
-                    System.out.println("Você saiu! ");
-                    break;
-                case 8:
-                    Imovel cheat = new Imovel("Sombrio", "Getulio", 53536, 56363, 535222, 2, 0, 100);
-                    imovel.add(cheat);
-                    Imovel cheat1 = new Imovel("Sombrio", "Getulio", 656786, 363, 535222, 2, 1, 9000);
-                    imovel.add(cheat1);
-                    Imovel cheat2 = new Imovel("Ararangua", "Caverazinho", 656786, 363, 535222, 2, 0, 20000);
-                    imovel.add(cheat2);
-                    Imovel cheat3 = new Imovel("Balneario Gaivota", "W5", 656786, 363, 535222, 2, 1, 10000);
-                    imovel.add(cheat3);
-                    break;
+            case 1:
+                Cadastrar();
+                break;
+            case 2:
+                Listar();
+                break;
+            case 3:
+                ListaFiltrada();
+                break;
+            case 4:
+                Editar();
+                break;
+            case 5:
+                Excluir();
+                break;
+            case 6:
+                System.out.println("Você saiu! ");
+                break;
+            case 8:
+                Imovel cheat = new Imovel("Sombrio", "Getulio", 53536, 56363, 535222, 2, 0, 100);
+                imovel.add(cheat);
+                Imovel cheat1 = new Imovel("Sombrio", "Getulio", 656786, 363, 535222, 2, 1, 9000);
+                imovel.add(cheat1);
+                Imovel cheat2 = new Imovel("Ararangua", "Caverazinho", 656786, 363, 535222, 2, 0, 20000);
+                imovel.add(cheat2);
+                Imovel cheat3 = new Imovel("Balneario Gaivota", "W5", 656786, 363, 535222, 2, 1, 10000);
+                imovel.add(cheat3);
+                break;
 
-                default:
-                    System.out.println("Opção invalida, tente novamente! ");
-                    ler.nextInt();
+            default:
+                System.out.println("Opção invalida, tente novamente! ");
+                ler.nextInt();
             }
         }
     }
@@ -102,42 +100,42 @@ public class Imobiliaria {
             System.out.print("Digite uma opção: ");
             opcao = ler.nextInt();
             switch (opcao) {
-                case 1:
+            case 1:
 
-                    break;
-                case 2:
-                    Listar();
-                    break;
-                case 3:
-                    System.out.println("Digite o preço minimo desejavel: ");
-                    int precoMin = ler.nextInt();
-                    System.out.println("Digite o preço maximo desejavel: ");
-                    int precoMax = ler.nextInt();
-                    for (Imovel n1 : imovel) {
-                        if (n1.getPreco() > precoMin && n1.getPreco() < precoMax) {
-                            System.out.println(n1);
-                        }
+                break;
+            case 2:
+                Listar();
+                break;
+            case 3:
+                System.out.println("Digite o preço minimo desejavel: ");
+                int precoMin = ler.nextInt();
+                System.out.println("Digite o preço maximo desejavel: ");
+                int precoMax = ler.nextInt();
+                for (Imovel n1 : imovel) {
+                    if (n1.getPreco() > precoMin && n1.getPreco() < precoMax) {
+                        System.out.println(n1);
                     }
-                    break;
-                case 4:
-                    System.out.println("Digite 0 para casa e 1 para apartamento: ");
-                    int temp = ler.nextInt();
-                    while (temp > 1) {
-                        System.out.println("Opção invalida, Digite novamente: ");
-                        temp = ler.nextInt();
+                }
+                break;
+            case 4:
+                System.out.println("Digite 0 para casa e 1 para apartamento: ");
+                int temp = ler.nextInt();
+                while (temp > 1) {
+                    System.out.println("Opção invalida, Digite novamente: ");
+                    temp = ler.nextInt();
+                }
+                for (Imovel n1 : imovel) {
+                    if (temp == n1.getTipo()) {
+                        System.out.println(n1);
                     }
-                    for (Imovel n1 : imovel) {
-                        if (temp == n1.getTipo()) {
-                            System.out.println(n1);
-                        }
-                    }
-                    break;
-                case 5:
-                    System.out.println("Você saiu! ");
-                    break;
-                default:
-                    System.out.println("Opção invalida, tente novamente! ");
-                    ler.nextInt();
+                }
+                break;
+            case 5:
+                System.out.println("Você saiu! ");
+                break;
+            default:
+                System.out.println("Opção invalida, tente novamente! ");
+                ler.nextInt();
             }
         }
     }
@@ -178,9 +176,7 @@ public class Imobiliaria {
     public void Excluir() {
         System.out.println("Digite o codigo do imovel que voce quer excluir: ");
         int codigo = ler.nextInt();
-        for (Imovel n1 : imovel) {
-            imovel.removeIf(imoveis -> imoveis.getCodigo() == codigo);
-        }
+        imovel.removeIf(imoveis -> imoveis.getCodigo() == codigo);
     }
 
 }
