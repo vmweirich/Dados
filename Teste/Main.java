@@ -11,6 +11,7 @@ public class Main {
             int elemento = p.pop();
             System.out.println("desempilhei" + elemento);
         }
-        int e = p.pop(); 
+        int e = p.pop();
     }
 }
+//asduasodd
