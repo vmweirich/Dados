@@ -12,6 +12,6 @@ public class Main {
         System.out.println(l.get(1).getValor());
         System.out.println(l.get(2).getValor());
         System.out.println(l.get(3).getValor());
-
+        l.remover(null);
     }
 }

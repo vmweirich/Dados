@@ -48,7 +48,20 @@ public class ListaEncadeada {
     }
 
     public void remover(String novoValor) {
+        Elemento atual = primeiro;
+        Elemento anterior = null;
 
+        if (atual != null && atual.getValor().equals(novoValor)) {
+            primeiro = atual.getProximo();
+            return;
+        }
+        while (atual != null && !atual.getValor().equals(novoValor)) {
+            anterior = atual;
+            atual = atual.getProximo();
+        }
+        if (atual != null) {
+            anterior.proximo = atual.proximo;
+        }
     }
 
     public Elemento get(int posicao) {

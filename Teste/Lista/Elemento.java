@@ -2,7 +2,7 @@ package Lista;
 
 public class Elemento {
     private String valor;
-    private Elemento proximo;
+    Elemento proximo;
 
     public Elemento(String novoValor) {
         this.valor = novoValor;
